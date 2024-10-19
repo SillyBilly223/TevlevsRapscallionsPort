@@ -1,0 +1,293 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+		<LangVersion>10.0</LangVersion>
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+		<GeneratePackageOnBuild>False</GeneratePackageOnBuild>
+	</PropertyGroup>
+
+	<ItemGroup>
+	  <None Remove="Resources\BrianBack.png" />
+	  <None Remove="Resources\BrianBackDamaged2.png" />
+	  <None Remove="Resources\BrianBackDamaged3.png" />
+	  <None Remove="Resources\BrianFront.png" />
+	  <None Remove="Resources\BrianFrontDamaged2.png" />
+	  <None Remove="Resources\BrianFrontDamaged3.png" />
+	  <None Remove="Resources\BrianMenu.png" />
+	  <None Remove="Resources\BrianOverworld.png" />
+	  <None Remove="Resources\BubbleBlowerBack.png" />
+	  <None Remove="Resources\BubbleBlowerFront.png" />
+	  <None Remove="Resources\BubbleBlowerMenu.png" />
+	  <None Remove="Resources\BubbleBlowerOverworld.png" />
+	  <None Remove="Resources\BubbleIcon.png" />
+	  <None Remove="Resources\Carpyback.png" />
+	  <None Remove="Resources\CarpyFront.png" />
+	  <None Remove="Resources\CarpyMenu.png" />
+	  <None Remove="Resources\CarpyOverworld.png" />
+	  <None Remove="Resources\GilbertBack.png" />
+	  <None Remove="Resources\GilbertBalooSkill.png" />
+	  <None Remove="Resources\GilbertFront.png" />
+	  <None Remove="Resources\GilbertIcon.png" />
+	  <None Remove="Resources\GilbertLiquidSkill.png" />
+	  <None Remove="Resources\GilbertMenu.png" />
+	  <None Remove="Resources\GilbertOverWorld.png" />
+	  <None Remove="Resources\GilbertPassive.png" />
+	  <None Remove="Resources\GilbertPyreSkill.png" />
+	  <None Remove="Resources\ItemJunk.png" />
+	  <None Remove="Resources\JunkCollectorPassive.png" />
+	  <None Remove="Resources\JunkRusty.png" />
+	  <None Remove="Resources\JunkSharp.png" />
+	  <None Remove="Resources\JunkShiny.png" />
+	  <None Remove="Resources\JunkSmooth.png" />
+	  <None Remove="Resources\Lovebugback.png" />
+	  <None Remove="Resources\LovebugFront.png" />
+	  <None Remove="Resources\LovebugMenu.png" />
+	  <None Remove="Resources\LovebugOverworld.png" />
+	  <None Remove="Resources\LovebugPose1.png" />
+	  <None Remove="Resources\LovebugPose2.png" />
+	  <None Remove="Resources\LovebugPose3.png" />
+	  <None Remove="Resources\LovebugPose4.png" />
+	  <None Remove="Resources\LovebugPose5.png" />
+	  <None Remove="Resources\LovebugPose6.png" />
+	  <None Remove="Resources\LovebugPose7.png" />
+	  <None Remove="Resources\LovebugPose8.png" />
+	  <None Remove="Resources\LovebugPose9.png" />
+	  <None Remove="Resources\MeatshotBack.png" />
+	  <None Remove="Resources\MeatShotDialogue.png" />
+	  <None Remove="Resources\MeatshotFront.png" />
+	  <None Remove="Resources\MeatshotMenu.png" />
+	  <None Remove="Resources\MeatshotOverworld.png" />
+	  <None Remove="Resources\MungWhispererPassive.png" />
+	  <None Remove="Resources\NailsBack.png" />
+	  <None Remove="Resources\NailsFront.png" />
+	  <None Remove="Resources\NailsMenu.png" />
+	  <None Remove="Resources\NailsOverWorld.png" />
+	  <None Remove="Resources\nutcracker" />
+	  <None Remove="Resources\retard.bank" />
+	  <None Remove="Resources\retard.strings.bank" />
+	  <None Remove="Resources\SkillBriefcase.png" />
+	  <None Remove="Resources\SkillBubblespit.png" />
+	  <None Remove="Resources\SkillCannonball.png" />
+	  <None Remove="Resources\SkillCarpCry.png" />
+	  <None Remove="Resources\SkillEvisceration.png" />
+	  <None Remove="Resources\SkillExpelTheFluids.png" />
+	  <None Remove="Resources\SkillFishyBusiness.png" />
+	  <None Remove="Resources\SkillFleshRecalibrate.png" />
+	  <None Remove="Resources\SkillKissyKissy.png" />
+	  <None Remove="Resources\SkillLocknLoad.png" />
+	  <None Remove="Resources\SkillMoneygame.png" />
+	  <None Remove="Resources\SkillNailing.png" />
+	  <None Remove="Resources\SkillOrderCharge.png" />
+	  <None Remove="Resources\SkillOrderRetreat.png" />
+	  <None Remove="Resources\SkillPeekabo.png" />
+	  <None Remove="Resources\SkillPet.png" />
+	  <None Remove="Resources\SkillPointBlank.png" />
+	  <None Remove="Resources\SkillRainyDay.png" />
+	  <None Remove="Resources\SkillSalmonSkin.png" />
+	  <None Remove="Resources\SkillSnipe.png" />
+	  <None Remove="Resources\SkillTrinkets.png" />
+	  <None Remove="Resources\SkillWhack.png" />
+	  <None Remove="Resources\SkillWhistle.png" />
+	  <None Remove="Resources\steamhappyinreallife.png" />
+	  <None Remove="Resources\UINineSliceTest_3.png" />
+	  <None Remove="Resources\ZensukeBack.png" />
+	  <None Remove="Resources\ZensukeFront.png" />
+	  <None Remove="Resources\ZensukeMenu.png" />
+	  <None Remove="Resources\ZensukeOverworld.png" />
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Include="Resources\BrianBack.png" />
+	  <EmbeddedResource Include="Resources\BrianBackDamaged2.png" />
+	  <EmbeddedResource Include="Resources\BrianBackDamaged3.png" />
+	  <EmbeddedResource Include="Resources\BrianFront.png" />
+	  <EmbeddedResource Include="Resources\BrianFrontDamaged2.png" />
+	  <EmbeddedResource Include="Resources\BrianFrontDamaged3.png" />
+	  <EmbeddedResource Include="Resources\BrianMenu.png" />
+	  <EmbeddedResource Include="Resources\BrianOverWorld.png" />
+	  <EmbeddedResource Include="Resources\BubbleBlowerBack.png" />
+	  <EmbeddedResource Include="Resources\BubbleBlowerFront.png" />
+	  <EmbeddedResource Include="Resources\BubbleBlowerMenu.png" />
+	  <EmbeddedResource Include="Resources\BubbleBlowerOverworld.png" />
+	  <EmbeddedResource Include="Resources\BubbleIcon.png" />
+	  <EmbeddedResource Include="Resources\Carpyback.png" />
+	  <EmbeddedResource Include="Resources\CarpyFront.png" />
+	  <EmbeddedResource Include="Resources\CarpyMenu.png" />
+	  <EmbeddedResource Include="Resources\CarpyOverworld.png" />
+	  <EmbeddedResource Include="Resources\GilbertBack.png" />
+	  <EmbeddedResource Include="Resources\GilbertBalooSkill.png" />
+	  <EmbeddedResource Include="Resources\GilbertFront.png" />
+	  <EmbeddedResource Include="Resources\GilbertIcon.png" />
+	  <EmbeddedResource Include="Resources\GilbertLiquidSkill.png" />
+	  <EmbeddedResource Include="Resources\GilbertMenu.png" />
+	  <EmbeddedResource Include="Resources\GilbertOverWorld.png" />
+	  <EmbeddedResource Include="Resources\GilbertPassive.png" />
+	  <EmbeddedResource Include="Resources\GilbertPyreSkill.png" />
+	  <EmbeddedResource Include="Resources\ItemJunk.png" />
+	  <EmbeddedResource Include="Resources\JunkCollectorPassive.png" />
+	  <EmbeddedResource Include="Resources\JunkRusty.png" />
+	  <EmbeddedResource Include="Resources\JunkSharp.png" />
+	  <EmbeddedResource Include="Resources\JunkShiny.png" />
+	  <EmbeddedResource Include="Resources\JunkSmooth.png" />
+	  <EmbeddedResource Include="Resources\LovebugBack.png" />
+	  <EmbeddedResource Include="Resources\LovebugFront.png" />
+	  <EmbeddedResource Include="Resources\LovebugMenu.png" />
+	  <EmbeddedResource Include="Resources\LovebugOverWorld.png" />
+	  <EmbeddedResource Include="Resources\LovebugPose1.png" />
+	  <EmbeddedResource Include="Resources\LovebugPose2.png" />
+	  <EmbeddedResource Include="Resources\LovebugPose3.png" />
+	  <EmbeddedResource Include="Resources\LovebugPose4.png" />
+	  <EmbeddedResource Include="Resources\LovebugPose5.png" />
+	  <EmbeddedResource Include="Resources\LovebugPose6.png" />
+	  <EmbeddedResource Include="Resources\LovebugPose7.png" />
+	  <EmbeddedResource Include="Resources\LovebugPose8.png" />
+	  <EmbeddedResource Include="Resources\LovebugPose9.png" />
+	  <EmbeddedResource Include="Resources\MeatShotBack.png" />
+	  <EmbeddedResource Include="Resources\MeatShotDialogue.png" />
+	  <EmbeddedResource Include="Resources\MeatShotFront.png" />
+	  <EmbeddedResource Include="Resources\MeatShotMenu.png" />
+	  <EmbeddedResource Include="Resources\MeatShotOverWorld.png" />
+	  <EmbeddedResource Include="Resources\MungWhispererPassive.png" />
+	  <EmbeddedResource Include="Resources\NailsBack.png" />
+	  <EmbeddedResource Include="Resources\NailsFront.png" />
+	  <EmbeddedResource Include="Resources\NailsMenu.png" />
+	  <EmbeddedResource Include="Resources\NailsOverWorld.png" />
+	  <EmbeddedResource Include="Resources\nutcracker" />
+	  <EmbeddedResource Include="Resources\retard.bank" />
+	  <EmbeddedResource Include="Resources\retard.strings.bank" />
+	  <EmbeddedResource Include="Resources\SkillBriefcase.png" />
+	  <EmbeddedResource Include="Resources\SkillBubblespit.png" />
+	  <EmbeddedResource Include="Resources\SkillCannonball.png" />
+	  <EmbeddedResource Include="Resources\SkillCarpCry.png" />
+	  <EmbeddedResource Include="Resources\SkillEvisceration.png" />
+	  <EmbeddedResource Include="Resources\SkillExpelTheFluids.png" />
+	  <EmbeddedResource Include="Resources\SkillFishyBusiness.png" />
+	  <EmbeddedResource Include="Resources\SkillFleshRecalibrate.png" />
+	  <EmbeddedResource Include="Resources\SkillKissyKissy.png" />
+	  <EmbeddedResource Include="Resources\SkillLocknLoad.png" />
+	  <EmbeddedResource Include="Resources\SkillMoneygame.png" />
+	  <EmbeddedResource Include="Resources\SkillNailing.png" />
+	  <EmbeddedResource Include="Resources\SkillOrderCharge.png" />
+	  <EmbeddedResource Include="Resources\SkillOrderRetreat.png" />
+	  <EmbeddedResource Include="Resources\SkillPeekabo.png" />
+	  <EmbeddedResource Include="Resources\SkillPet.png" />
+	  <EmbeddedResource Include="Resources\SkillPointBlank.png" />
+	  <EmbeddedResource Include="Resources\SkillRainyDay.png" />
+	  <EmbeddedResource Include="Resources\SkillSalmonSkin.png" />
+	  <EmbeddedResource Include="Resources\SkillSnipe.png" />
+	  <EmbeddedResource Include="Resources\SkillTrinkets.png" />
+	  <EmbeddedResource Include="Resources\SkillWhack.png" />
+	  <EmbeddedResource Include="Resources\SkillWhistle.png" />
+	  <EmbeddedResource Include="Resources\steamhappyinreallife.png" />
+	  <EmbeddedResource Include="Resources\UINineSliceTest_3.png" />
+	  <EmbeddedResource Include="Resources\ZensukeBack.png" />
+	  <EmbeddedResource Include="Resources\ZensukeFront.png" />
+	  <EmbeddedResource Include="Resources\ZensukeMenu.png" />
+	  <EmbeddedResource Include="Resources\ZensukeOverworld.png" />
+	</ItemGroup>
+
+  <ItemGroup>
+    <Reference Include="0Harmony">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\0Harmony.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\Desktop\Steam\steamapps\common\Brutal Orchestra\Assembly-CSharp.dll</HintPath>
+    </Reference>
+    <Reference Include="BepInEx">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\BepInEx.dll</HintPath>
+    </Reference>
+    <Reference Include="BrutalAPI">
+      <HintPath>..\..\..\..\Desktop\Steam\steamapps\common\Brutal Orchestra\BrutalOrchestra_Data\StreamingAssets\mods\BrutalAPI\plugins\BrutalAPI.dll</HintPath>
+    </Reference>
+    <Reference Include="DOTween">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\DOTween.dll</HintPath>
+    </Reference>
+    <Reference Include="FMODUnity">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\FMODUnity.dll</HintPath>
+    </Reference>
+    <Reference Include="FMODUnityResonance">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\FMODUnityResonance.dll</HintPath>
+    </Reference>
+    <Reference Include="Marosi.SerializableCollections">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\Marosi.SerializableCollections.dll</HintPath>
+    </Reference>
+    <Reference Include="Marosi.Utility">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\Marosi.Utility.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.RuntimeDetour">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\MonoMod.RuntimeDetour.dll</HintPath>
+    </Reference>
+    <Reference Include="MonoMod.Utils">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.InputSystem">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\Unity.InputSystem.dll</HintPath>
+    </Reference>
+    <Reference Include="Unity.TextMeshPro">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\Unity.TextMeshPro.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\UnityEngine.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AnimationModule">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\UnityEngine.AnimationModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AssetBundleModule">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\UnityEngine.AssetBundleModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.AudioModule">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\UnityEngine.AudioModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.CoreModule">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\UnityEngine.CoreModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ImageConversionModule">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\UnityEngine.ImageConversionModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.InputModule">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\UnityEngine.InputModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.ParticleSystemModule">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\UnityEngine.ParticleSystemModule.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UI">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\UnityEngine.UI.dll</HintPath>
+    </Reference>
+    <Reference Include="UnityEngine.UIModule">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\UnityEngine.UIModule.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\YarnSpinner.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner.Compiler">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\YarnSpinner.Compiler.dll</HintPath>
+    </Reference>
+    <Reference Include="YarnSpinner.Unity">
+      <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\YarnSpinner.Unity.dll</HintPath>
+    </Reference>
+  </ItemGroup>
+	
+	<ItemGroup>
+	  <Compile Update="Properties\Resources.Designer.cs">
+	    <DesignTime>True</DesignTime>
+	    <AutoGen>True</AutoGen>
+	    <DependentUpon>Resources.resx</DependentUpon>
+	  </Compile>
+	</ItemGroup>
+
+	<ItemGroup>
+	  <EmbeddedResource Update="Properties\Resources.resx">
+	    <Generator>ResXFileCodeGenerator</Generator>
+	    <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+	  </EmbeddedResource>
+	</ItemGroup>
+	<ItemGroup>
+		<Compile Update="Properties\Resources.Designer.cs">
+			<DesignTime>True</DesignTime>
+			<AutoGen>True</AutoGen>
+			<DependentUpon>Resources.resx</DependentUpon>
+		</Compile>
+	</ItemGroup>	
+
+</Project>
