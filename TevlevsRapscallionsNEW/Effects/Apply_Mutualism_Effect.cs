@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TevlevsRapscallionsNEW.Effects
 {
-    public class ApplyMutualismEffect : EffectSO
+    public class Apply_Mutualism_Effect : EffectSO
     {
         public ParasitePassiveAbility CustomeMutuilism = null;
 

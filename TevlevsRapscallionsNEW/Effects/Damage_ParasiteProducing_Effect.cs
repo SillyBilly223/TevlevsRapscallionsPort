@@ -9,7 +9,7 @@ using static UnityEngine.UI.CanvasScaler;
 
 namespace TevlevsRapscallionsNEW.Effects
 {
-    public class ParasiteProducingDamageEffect : EffectSO
+    public class Damage_ParasiteProducing_Effect : EffectSO
     {
         [DeathTypeEnumRef]
         public string _DeathTypeID = "Basic";

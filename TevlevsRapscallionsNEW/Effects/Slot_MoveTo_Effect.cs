@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace FiendishFools.Effects
 {
-    public class MoveToSlotEffect : EffectSO
+    public class Slot_MoveTo_Effect : EffectSO
     {
         public override bool PerformEffect(CombatStats stats, IUnit caster, TargetSlotInfo[] targets, bool areTargetSlots, int entryVariable, out int exitAmount)
         {

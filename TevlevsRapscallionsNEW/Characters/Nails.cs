@@ -19,7 +19,7 @@ namespace TevlevsRapscallionsNEW.Characters
             StatusEffect_Apply_Effect ApplyScars = ScriptableObject.CreateInstance<StatusEffect_Apply_Effect>();
             ApplyScars._Status = Scars;
 
-            HealBasedOnStatusEffect HealBaseOffScars = ScriptableObject.CreateInstance<HealBasedOnStatusEffect>();
+            Heal_BasedOnStatus_Effect HealBaseOffScars = ScriptableObject.CreateInstance<Heal_BasedOnStatus_Effect>();
             HealBaseOffScars._Status = Scars;
 
             HealEffect HealthUsePrevious = ScriptableObject.CreateInstance<HealEffect>();
@@ -92,7 +92,7 @@ namespace TevlevsRapscallionsNEW.Characters
             ability3.Effects = new EffectInfo[]
             {
                 new EffectInfo() { effect = ScriptableObject.CreateInstance<RestoreSwapUseEffect>(), entryVariable = 1, targets = Targeting.GenerateSlotTarget(new int[] { -1, 0, 1 }, true) },
-                new EffectInfo() { effect = HealRandomEffect.Generate(1, 2), entryVariable = 2, targets = Targeting.Unit_AllAllies },
+                new EffectInfo() { effect = Heal_Random_Effect.Generate(1, 2), entryVariable = 2, targets = Targeting.Unit_AllAllies },
                 new EffectInfo() { effect = ScriptableObject.CreateInstance<RefreshAbilityUseEffect>(), entryVariable = 1, targets = Targeting.Slot_SelfSlot, condition = RandomChanceCondition.Chance(30)},
             };
             ability3.AnimationTarget = Targeting.GenerateSlotTarget(new int[] { -1, 1 }, true);
@@ -105,7 +105,7 @@ namespace TevlevsRapscallionsNEW.Characters
             ability4.Name = "Order, Move!";
             ability4.Description = "Refreshes all allies' movement. Heal all allies 2-3 health.\n30% chance to refresh this party member's abilites.";
             ability4.Effects[0].targets = Targeting.Unit_AllAllies;
-            ability4.Effects[1].effect = HealRandomEffect.Generate(2, 3);
+            ability4.Effects[1].effect = Heal_Random_Effect.Generate(2, 3);
             ability4.Effects[2].condition = RandomChanceCondition.Chance(30);
             ability4.ability.intents[0].targets = Targeting.Unit_AllAllies;
 
@@ -113,7 +113,7 @@ namespace TevlevsRapscallionsNEW.Characters
             ability5.Name = "Order, Retreat!";
             ability5.Description = "Refreshes all allies' movement. Heal all allies 2-4 health.\n35% chance to refresh this party member's abilites.";
             ability5.Effects[0].targets = Targeting.Unit_AllAllies;
-            ability5.Effects[1].effect = HealRandomEffect.Generate(2, 4);
+            ability5.Effects[1].effect = Heal_Random_Effect.Generate(2, 4);
             ability5.Effects[2].condition = RandomChanceCondition.Chance(35);
             ability5.ability.intents[0].targets = Targeting.Unit_AllAllies;
 
@@ -121,7 +121,7 @@ namespace TevlevsRapscallionsNEW.Characters
             ability6.Name = "Order, Scatter!";
             ability6.Description = "Refreshes all allies' movement. Heal all allies 2-6 health.\n40% chance to refresh this party member's abilites.";
             ability6.Effects[0].targets = Targeting.Unit_AllAllies;
-            ability6.Effects[1].effect = HealRandomEffect.Generate(2, 6);
+            ability6.Effects[1].effect = Heal_Random_Effect.Generate(2, 6);
             ability6.Effects[2].condition = RandomChanceCondition.Chance(40);
             ability6.ability.intents[1].intents[0] = IntentType_GameIDs.Heal_5_10.ToString();
             ability6.ability.intents[0].targets = Targeting.Unit_AllAllies;

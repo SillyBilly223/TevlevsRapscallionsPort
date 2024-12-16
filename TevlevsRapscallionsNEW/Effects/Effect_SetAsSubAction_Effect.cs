@@ -8,7 +8,7 @@ using UnityEngine;
 namespace TevlevsRapscallionsNEW.Effects
 {
 
-    public class SetEffectAsSubActionEffect : EffectSO
+    public class Effect_SetAsSubAction_Effect : EffectSO
     {
         public EffectSO Effect;
         public override bool PerformEffect(CombatStats stats, IUnit caster, TargetSlotInfo[] targets, bool areTargetSlots, int entryVariable, out int exitAmount)
@@ -25,7 +25,7 @@ namespace TevlevsRapscallionsNEW.Effects
 
         public static EffectInfo Gen(EffectInfo Effect)
         {
-            SetEffectAsSubActionEffect SubEffect = ScriptableObject.CreateInstance<SetEffectAsSubActionEffect>();
+            Effect_SetAsSubAction_Effect SubEffect = ScriptableObject.CreateInstance<Effect_SetAsSubAction_Effect>();
             SubEffect.Effect = Effect.effect;
             return new EffectInfo { effect = SubEffect, entryVariable = Effect.entryVariable, targets = Effect.targets.Clone(), condition = Effect.condition != null? Effect.condition.Clone() : null };
         }

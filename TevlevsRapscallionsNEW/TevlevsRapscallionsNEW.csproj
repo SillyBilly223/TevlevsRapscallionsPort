@@ -109,7 +109,7 @@
 	  <EmbeddedResource Include="Resources\BubbleBlowerBack.png" />
 	  <EmbeddedResource Include="Resources\BubbleBlowerFront.png" />
 	  <EmbeddedResource Include="Resources\BubbleBlowerMenu.png" />
-	  <EmbeddedResource Include="Resources\BubbleBlowerOverworld.png" />
+	  <EmbeddedResource Include="Resources\BubbleBlowerOverWorld.png" />
 	  <EmbeddedResource Include="Resources\BubbleIcon.png" />
 	  <EmbeddedResource Include="Resources\Carpyback.png" />
 	  <EmbeddedResource Include="Resources\CarpyFront.png" />
@@ -191,9 +191,6 @@
     <Reference Include="0Harmony">
       <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\0Harmony.dll</HintPath>
     </Reference>
-    <Reference Include="Assembly-CSharp">
-      <HintPath>..\..\..\..\Desktop\Steam\steamapps\common\Brutal Orchestra\Assembly-CSharp.dll</HintPath>
-    </Reference>
     <Reference Include="BepInEx">
       <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\BepInEx.dll</HintPath>
     </Reference>
@@ -220,6 +217,9 @@
     </Reference>
     <Reference Include="MonoMod.Utils">
       <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\MonoMod.Utils.dll</HintPath>
+    </Reference>
+    <Reference Include="Assembly-CSharp">
+      <HintPath>..\..\..\..\Desktop\Steam\steamapps\common\Brutal Orchestra\BepInEx\utils\PUBLIC-Assembly-CSharp.dll</HintPath>
     </Reference>
     <Reference Include="Unity.InputSystem">
       <HintPath>..\..\..\..\Desktop\New folder\BO Modding Generic Dependencies\Unity.InputSystem.dll</HintPath>

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TevlevsRapscallionsNEW.Effects
 {
-    public class MoveToEntryValueSlotEffect : EffectSO
+    public class Slot_MoveToEntryValue_Effect : EffectSO
     {
         public override bool PerformEffect(CombatStats stats, IUnit caster, TargetSlotInfo[] targets, bool areTargetSlots, int entryVariable, out int exitAmount)
         {

@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TevlevsRapscallionsNEW.Effects
 {
-    public class RemoveAllNegativeStatusEffectsEffect : EffectSO
+    public class StatusEffect_RemoveAllNegative_Effect : EffectSO
     {
         public bool RemovePositive = false;
 

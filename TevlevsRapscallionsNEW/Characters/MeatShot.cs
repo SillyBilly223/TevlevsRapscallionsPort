@@ -35,7 +35,7 @@ namespace TevlevsRapscallionsNEW.Characters
 
             #region Passive
 
-            ApplyMutualismEffect ApplyEmptyMutualismPreviousEffect = ScriptableObject.CreateInstance<ApplyMutualismEffect>();
+            Apply_Mutualism_Effect ApplyEmptyMutualismPreviousEffect = ScriptableObject.CreateInstance<Apply_Mutualism_Effect>();
             ApplyEmptyMutualismPreviousEffect.ApplyEmptyMutualism = true;
             ApplyEmptyMutualismPreviousEffect.UsePrevious = true;
 
@@ -45,7 +45,7 @@ namespace TevlevsRapscallionsNEW.Characters
             abilityS.Cost = new ManaColorSO[1] { Pigments.Grey };
             abilityS.Effects = new EffectInfo[]
             {
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<ReduceHealthEffect>(), entryVariable = 5, targets = Targeting.Slot_SelfSlot },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Health_Reduce_Effect>(), entryVariable = 5, targets = Targeting.Slot_SelfSlot },
                 new EffectInfo() { effect = ApplyEmptyMutualismPreviousEffect, entryVariable = 1, targets = Targeting.Slot_SelfSlot },
             };
             abilityS.AddIntentsToTarget(Targeting.Slot_SelfSlot, new string[] { "Damage_3_6", "IntentMMS_ID" });

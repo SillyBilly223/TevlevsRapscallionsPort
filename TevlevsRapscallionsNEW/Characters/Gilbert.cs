@@ -1,8 +1,5 @@
 ﻿using BrutalAPI;
 using FiendishFools.Condition;
-using JetBrains.Annotations;
-using MUtility;
-using System;
 using System.Collections.Generic;
 using System.Text;
 using TevlevsRapscallionsNEW.AbilitySelectors;
@@ -10,8 +7,6 @@ using TevlevsRapscallionsNEW.CustomePassives;
 using TevlevsRapscallionsNEW.CustomeTargetting;
 using TevlevsRapscallionsNEW.Effects;
 using UnityEngine;
-using static UnityEngine.EventSystems.EventTrigger;
-using static UnityEngine.GraphicsBuffer;
 
 namespace TevlevsRapscallionsNEW.Characters
 {
@@ -70,9 +65,9 @@ namespace TevlevsRapscallionsNEW.Characters
             ability.Cost = new ManaColorSO[] { Pigments.Red, Pigments.Red };
             ability.Effects = new EffectInfo[]
             {
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<HasOpponentEffect>(), targets = Targeting.Slot_Front, entryVariable = 0, },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Check_HasOpponent_Effect>(), targets = Targeting.Slot_Front, entryVariable = 0, },
                 new EffectInfo() { effect = ScriptableObject.CreateInstance<DamageEffect>(), targets = Targeting.Slot_Front, entryVariable = 6, condition = IfFirstEffectTrue },
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<SpawnGilbertAnywhereEffect>(), targets = Targeting.Slot_Front, entryVariable = 1, condition = IfFirstEffectFalse },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Spawn_GilbertAnywhere_Effect>(), targets = Targeting.Slot_Front, entryVariable = 1, condition = IfFirstEffectFalse },
                 new EffectInfo() { effect = ScriptableObject.CreateInstance<RefreshAbilityUseEffect>(), targets = Targeting.Slot_SelfSlot, entryVariable = 1, condition = PreviousEffectTrue }
             };
             ability.Visuals = LoadedAssetsHandler.GetEnemyAbility("Bash_A").visuals;
@@ -99,9 +94,9 @@ namespace TevlevsRapscallionsNEW.Characters
             ability2.Cost = new ManaColorSO[] { Pigments.Red, Pigments.Yellow };
             ability2.Effects = new EffectInfo[]
             {
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<HasOpponentEffect>(), targets = Targeting.Slot_Front, entryVariable = 0, },
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<LeechDamageEffect>(), targets = Targeting.Slot_Front, entryVariable = 3, condition = IfFirstEffectTrue },
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<SpawnGilbertAnywhereEffect>(), targets = Targeting.Slot_Front, entryVariable = 1, condition = IfFirstEffectFalse },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Check_HasOpponent_Effect>(), targets = Targeting.Slot_Front, entryVariable = 0, },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Damage_Leech_Effect>(), targets = Targeting.Slot_Front, entryVariable = 3, condition = IfFirstEffectTrue },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Spawn_GilbertAnywhere_Effect>(), targets = Targeting.Slot_Front, entryVariable = 1, condition = IfFirstEffectFalse },
                 new EffectInfo() { effect = ScriptableObject.CreateInstance<RefreshAbilityUseEffect>(), targets = Targeting.Slot_SelfSlot, entryVariable = 1, condition = PreviousEffectTrue }
             };
             ability2.Visuals = LoadedAssetsHandler.GetCharacterAbility("Huff_1_A").visuals;
@@ -132,9 +127,9 @@ namespace TevlevsRapscallionsNEW.Characters
             ability3.Effects = new EffectInfo[]
             {
                 new EffectInfo() { effect = ScriptableObject.CreateInstance<ChangeMaxHealthEffect>(), targets = Targeting.Slot_SelfSlot, entryVariable = 1, },
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<GilbertDestructEffect>(), targets = Targeting.Slot_Front, entryVariable = 0, },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Misc_GilbertDestruct_Effect>(), targets = Targeting.Slot_Front, entryVariable = 0, },
                 new EffectInfo() { effect = UsePreviousDamageEffect, targets = Targeting.Slot_Front, entryVariable = 1, condition = PreviousEffectTrue },
-                SetEffectAsSubActionEffect.Gen(new EffectInfo() { effect = ScriptableObject.CreateInstance<HealEffect>(), targets = Targeting.Slot_SelfSlot, entryVariable = 4 })
+                Effect_SetAsSubAction_Effect.Gen(new EffectInfo() { effect = ScriptableObject.CreateInstance<HealEffect>(), targets = Targeting.Slot_SelfSlot, entryVariable = 4 })
             };
             ability3.Visuals = LoadedAssetsHandler.GetCharacterAbility("Amalgam_1_A").visuals;
             ability3.AnimationTarget = ScriptableObject.CreateInstance<Targetting_Gilberts>();
@@ -223,7 +218,7 @@ namespace TevlevsRapscallionsNEW.Characters
             FakeSlap.ability.priority.priorityValue = 5;
             FakeSlap.Effects = new EffectInfo[]
             {
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<EnemyPerformRandomActionEffect>(), entryVariable = 0, targets = Targeting.Slot_SelfSlot },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<EnemyTurn_PerformRandomAction_Effect>(), entryVariable = 0, targets = Targeting.Slot_SelfSlot },
             };
             FakeSlap.AddIntentsToTarget(Targeting.Slot_SelfSlot, new string[] { IntentType_GameIDs.Misc_Hidden.ToString() });
             FakeSlap.Visuals = LoadedAssetsHandler.GetCharacterAbility("Slap_A").visuals;
@@ -238,8 +233,8 @@ namespace TevlevsRapscallionsNEW.Characters
             {
                 new EffectInfo() { effect = ApplyFocusEffect, entryVariable = 1, targets = Targeting.Slot_SelfSlot },
                 new EffectInfo() { effect = ExtraUtils.RandomRangeEffectGen(ScriptableObject.CreateInstance<ChangeMaxHealthEffect>(), new Vector2(1, 2)), entryVariable = 0, targets = Targeting.Slot_SelfSlot },
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<CheckIfAvaiableEnemySpawnEffect>(), entryVariable = 0, targets = Targeting.Slot_SelfSlot },
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<SpawnGilbertAnywhereEffect>(), entryVariable = 0, targets = Targeting.Slot_SelfSlot, condition = IfThirdEffectTrue },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Check_IfAvaiableEnemySpawn_Effect>(), entryVariable = 0, targets = Targeting.Slot_SelfSlot },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Spawn_GilbertAnywhere_Effect>(), entryVariable = 0, targets = Targeting.Slot_SelfSlot, condition = IfThirdEffectTrue },
             };
             Schizoid.AddIntentsToTarget(Targeting.Slot_SelfSlot, new string[] { "Status_Focused", "Other_MaxHealth", "Other_Spawn" });
             Schizoid.Visuals = LoadedAssetsHandler.GetCharacterAbility("Amalgam_1_A").visuals;

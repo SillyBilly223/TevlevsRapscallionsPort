@@ -2,7 +2,7 @@
 
 namespace TevlevsRapscallionsNEW.Effects
 {
-    public class HealBasedOnStatusEffect : EffectSO
+    public class Heal_BasedOnStatus_Effect : EffectSO
     {
         public StatusEffect_SO _Status;
 

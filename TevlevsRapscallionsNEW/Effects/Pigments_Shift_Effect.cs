@@ -7,7 +7,7 @@ using UnityEngine;
 
 namespace TevlevsRapscallionsNEW.Effects
 {
-    public class ShiftPigmentsEffect : EffectSO
+    public class Pigments_Shift_Effect : EffectSO
     {
         public override bool PerformEffect(CombatStats stats, IUnit caster, TargetSlotInfo[] targets, bool areTargetSlots, int entryVariable, out int exitAmount)
         {

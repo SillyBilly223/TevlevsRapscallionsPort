@@ -9,7 +9,7 @@ using Yarn;
 
 namespace TevlevsRapscallionsNEW.Effects
 {
-    public class SpawnGilbertAnywhereEffect : EffectSO
+    public class Spawn_GilbertAnywhere_Effect : EffectSO
     {
         [CombatIDsEnumRef]
         public string _spawnSoundID = "Basic";

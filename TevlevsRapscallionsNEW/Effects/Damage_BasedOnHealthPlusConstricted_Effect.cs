@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace TevlevsRapscallionsNEW.Effects
 {
-    public class DamageBasedOnHealthPlusConstrictedEffect : EffectSO
+    public class Damage_BasedOnHealthPlusConstricted_Effect : EffectSO
     {
         [DeathTypeEnumRef]
         public string _DeathTypeID = "Basic";

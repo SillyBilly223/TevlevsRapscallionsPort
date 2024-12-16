@@ -1,21 +1,18 @@
-﻿using System;
+﻿using BrutalAPI;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace TevlevsRapscallionsNEW.Effects
 {
-    public class EnterCasterMutualismEffect : EffectSO
+    public class Check_IfAvaiableEnemySpawn_Effect : EffectSO
     {
+        public int SizeNeeded = 1;
+
         public override bool PerformEffect(CombatStats stats, IUnit caster, TargetSlotInfo[] targets, bool areTargetSlots, int entryVariable, out int exitAmount)
         {
             exitAmount = 0;
-
-            for (int i = 0; i < targets.Length; i++) 
-            {
-                
-            }
-
-            return exitAmount > 0;
+            return stats.GetRandomEnemySlot(SizeNeeded) != -1;
         }
     }
 }

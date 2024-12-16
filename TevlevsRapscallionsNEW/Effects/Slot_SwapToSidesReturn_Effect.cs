@@ -3,7 +3,7 @@ using Random = UnityEngine.Random;
 
 namespace TevlevsRapscallionsNEW.Effects
 {
-    public class SwapToSidesReturnSlotEffect : EffectSO
+    public class Slot_SwapToSidesReturn_Effect : EffectSO
     {
         public override bool PerformEffect(CombatStats stats, IUnit caster, TargetSlotInfo[] targets, bool areTargetSlots, int entryVariable, out int exitAmount)
         {

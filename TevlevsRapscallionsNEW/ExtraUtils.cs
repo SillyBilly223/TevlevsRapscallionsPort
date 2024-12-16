@@ -105,7 +105,7 @@ namespace TevlevsRapscallionsNEW
             extraAbilityInfo.rarity.rarityValue = 5;
             extraAbilityInfo.ability.priority.priorityValue = 5;
 
-            RemoveExtraAbilityFromEnemyEffect RemoveExtraAbility = ScriptableObject.CreateInstance<RemoveExtraAbilityFromEnemyEffect>();
+            EnemyTurn_RemoveExtraAbilityFromEnemy_Effect RemoveExtraAbility = ScriptableObject.CreateInstance<EnemyTurn_RemoveExtraAbilityFromEnemy_Effect>();
             RemoveExtraAbility.ExtraAbility = extraAbilityInfo;
 
             List<EffectInfo> AddedEffect = extraAbilityInfo.ability.effects.ToList();
@@ -167,8 +167,6 @@ namespace TevlevsRapscallionsNEW
             AddGilbertActionsToTimeLineAction.ClearPending();
         }
 
-        //TimelineLayoutHandler
-
         public static IEnumerator GiblertAddTimelineSlots(TurnUIInfo[] newTurns)
         {
             TimelineLayoutHandler_TurnBased TimelineHandler = CombatManager._instance._combatUI._TimelineHandler as TimelineLayoutHandler_TurnBased;
@@ -201,21 +199,6 @@ namespace TevlevsRapscallionsNEW
                 NewSortTimelineinfo.Add(NewInfo[i]);
             }
 
-            //AbilityTimelineSlots
-            /*
-            List<int> CheckedEnemies = new List<int>();
-            for (int i = 0; i < OldSortTimelineinfo.Count; i++)
-            {
-                if (CheckedEnemies.Contains(OldSortTimelineinfo[i].enemyID))
-                    continue;
-                if (TimelineHandler.EnemiesInCombat.TryGetValue(OldSortTimelineinfo[i].enemyID, out EnemyCombatUIInfo Enemy))
-                    for (int a = 0; a < Enemy.AbilityTimelineSlots.Count; a++)
-                        for (int j = 0; j < Enemy.AbilityTimelineSlots[a].Count; j++)
-                            Enemy.AbilityTimelineSlots[a][j] += newTurns.Length;
-                CheckedEnemies.Add(OldSortTimelineinfo[i].enemyID);
-            }
-            */
-
             NewSortTimelineinfo.AddRange(OldSortTimelineinfo);
             TimelineHandler.TimelineSlotInfo = NewSortTimelineinfo;
 
@@ -226,8 +209,6 @@ namespace TevlevsRapscallionsNEW
         {
             TimelineZoneLayout TimelineLayout = CombatManager._instance._combatUI._timeline;
             List<TimelineSlotGroup> NewSlots = new List<TimelineSlotGroup>();
-
-            //SetTimelinePositionsBasedOffID(TimelineLayout._slotsInUse);
 
             TimelineLayout._slotsInUse = SortTimelineSlotList(TimelineLayout._slotsInUse);
 
@@ -285,15 +266,6 @@ namespace TevlevsRapscallionsNEW
             }
         }
 
-        /*
-        public static void SetTimelinePositionsBasedOffID(List<TimelineSlotGroup> Slots)
-        {
-            for (int i = 0; i > Slots.Count - 1; i++)
-                Slots[i].SetSiblingIndex(Slots[i].slot.TimelineSlotID + 2);
-        }
-        */
-
-
         public static List<TimelineSlotGroup> SortTimelineSlotList(List<TimelineSlotGroup> Slots)
         {
             TimelineSlotGroup[] SortedSlots = new TimelineSlotGroup[Slots.Count];
@@ -317,33 +289,6 @@ namespace TevlevsRapscallionsNEW
             }
             return SortedSlots.ToList();
         }
-
-        /* //Adds another player timeline
-         public static void AddSpecificEnemyAbilityToTimeLine(ITurn unit, int abilitID)
-         {
-            Timeline_Base Timeline = CombatManager._instance._stats.timeline;
-            List<TurnInfo> NewSortTurnInfo = new List<TurnInfo>();
-            List<TurnInfo> OldSortTunrInfo = new List<TurnInfo>();
-
-            for (int i = 0; i < CombatManager._instance._stats.timeline.Round.Count; i++)
-            {
-                if (EnemyGilberID.Contains(Timeline.Round[i].turnUnit.ID))
-                    NewSortTurnInfo.Add(Timeline.Round[i]);
-                else
-                    OldSortTunrInfo.Add(Timeline.Round[i]);
-            }
-
-            NewSortTurnInfo.Add(new TurnInfo(unit, abilitID, false));
-            NewSortTurnInfo.AddRange(OldSortTunrInfo);
-            unit.TurnsInTimeline++;
-
-            Timeline.Round = NewSortTurnInfo;
-
-            TurnUIInfo[] roundTurnUIInfo = Timeline.RoundTurnUIInfo;
-            CombatManager.Instance.AddUIAction(new PopulateTimelineUIAction(roundTurnUIInfo));
-            CombatManager.Instance.AddUIAction(new UpdateTimelinePointerUIAction(Timeline.CurrentTurn));
-          } 
-         */
 
         #endregion GilbertAbility
 
@@ -421,9 +366,9 @@ namespace TevlevsRapscallionsNEW
             LoveBugEmptyParasite._isFriendly = false;
             LoveBugEmptyParasite.effects = new EffectInfo[]
             {
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<DudEffect>(), entryVariable = 1, targets = Targeting.Slot_SelfSlot },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Misc_Dud_Effect>(), entryVariable = 1, targets = Targeting.Slot_SelfSlot },
                 new EffectInfo() { effect = ParasiteDamage, entryVariable = 5, targets = Targeting.Slot_SelfSlot },
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<ParasitismIncreaseValueEffect>(), entryVariable = 1, targets = Targeting.Slot_SelfSlot },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Parasitism_IncreaseValue_Effect>(), entryVariable = 1, targets = Targeting.Slot_SelfSlot },
             };
             LoveBugEmptyParasite.specialStoredData = UnitStoreData.GetCustom_UnitStoreData(EmptyP_PA);
 
@@ -625,7 +570,7 @@ namespace TevlevsRapscallionsNEW
 
         public static EffectSO RandomRangeEffectGen(EffectSO effect, Vector2 range)
         {
-            UseEffectRandomRangeEffect UseRange = ScriptableObject.CreateInstance<UseEffectRandomRangeEffect>();
+            Effect_UseRandomRange_Effect UseRange = ScriptableObject.CreateInstance<Effect_UseRandomRange_Effect>();
             UseRange.Effect = effect;
             UseRange.Range = range;
             return UseRange;
@@ -654,6 +599,62 @@ namespace TevlevsRapscallionsNEW
             });
             currentText.gameObject.SetActive(value: true);
             yield return t.WaitForPosition(Handler._StatusWaitTime);
+        }
+
+        public static T GetRandom<T>(this T[] array)
+        {
+            return array.Length == 0 ? default : array[UnityEngine.Random.Range(0, array.Length)];
+        }
+
+        public static T GetRandom<T>(this List<T> list)
+        {
+            return list.Count <= 0 ? default : list[UnityEngine.Random.Range(0, list.Count)];
+        }
+
+        public static T[] SelfArray<T>(this T self)
+        {
+            return new T[1] { self };
+        }
+
+        public static int GetStatus(this IUnit self, string StatusID)
+        {
+            if (self is IStatusEffector istatusEffector)
+            {
+                foreach (IStatusEffect statusEffect in istatusEffector.StatusEffects)
+                {
+                    if (statusEffect.StatusID == StatusID)
+                        return statusEffect.StatusContent;
+                }
+            }
+            return 0;
+        }
+
+        public static Type[] GetAllDerived(Type baze)
+        {
+            List<Type> typeList = new List<Type>();
+            foreach (Assembly assembly in AppDomain.CurrentDomain.GetAssemblies())
+            {
+                foreach (Type type in assembly.GetTypes())
+                {
+                    if (baze.IsAssignableFrom(type) && !typeList.Contains(type) && type != baze)
+                        typeList.Add(type);
+                }
+            }
+            return typeList.ToArray();
+        }
+
+        public static bool PCall(Action orig, string name = null)
+        {
+            try
+            {
+                orig();
+            }
+            catch
+            {
+                Debug.LogError(name != null ? name + " failed" : (object)(orig.ToString() + " failed"));
+                return false;
+            }
+            return true;
         }
 
         #endregion Misc

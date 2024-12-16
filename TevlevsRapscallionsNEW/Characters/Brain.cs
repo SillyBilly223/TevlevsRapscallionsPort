@@ -34,8 +34,8 @@ namespace TevlevsRapscallionsNEW.Characters
             ability.Cost = new ManaColorSO[] { Pigments.Red, Pigments.Red };
             ability.Effects = new EffectInfo[]
             {
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<DealMoreDamageIfConstrictedEffect>(), entryVariable = 3, targets = Targeting.Slot_Front },
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<DealMoreDamageIfConstrictedEffect>(), entryVariable = 3, targets = Targeting.Slot_Front },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Damage_MoreIfConstricted_Effect>(), entryVariable = 3, targets = Targeting.Slot_Front },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Damage_MoreIfConstricted_Effect>(), entryVariable = 3, targets = Targeting.Slot_Front },
                 new EffectInfo() { effect = ScriptableObject.CreateInstance<FieldEffect_ApplyLessIfContain_Effect>().AutoSetFieldEffectEffects("Constricted_ID"), entryVariable = 2, targets = Targeting.Slot_Front },
             };
             ability.AnimationTarget = Targeting.Slot_Front;
@@ -64,7 +64,7 @@ namespace TevlevsRapscallionsNEW.Characters
             ability2.Cost = new ManaColorSO[] { Pigments.Red, Pigments.Blue, Pigments.Yellow };
             ability2.Effects = new EffectInfo[]
             {
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<DamageBasedOnHealthPlusConstrictedEffect>(), entryVariable = 0, targets = Targeting.Slot_Front },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Damage_BasedOnHealthPlusConstricted_Effect>(), entryVariable = 0, targets = Targeting.Slot_Front },
                 new EffectInfo() { effect = ExtraUtils.InitSetEffectOfType<SetCasterExtraSpritesEffect>("BrainSS_ID"), entryVariable = 0, targets = Targeting.Slot_Front, condition = BrutalAPI.Effects.CheckPreviousEffectCondition(true, 0) },
             };
             ability2.AnimationTarget = Targeting.Slot_Front;
@@ -96,7 +96,7 @@ namespace TevlevsRapscallionsNEW.Characters
             ability3.Cost = new ManaColorSO[] { Pigments.Yellow, Pigments.Blue };
             ability3.Effects = new EffectInfo[]
             {
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<ShiftPigmentsEffect>(), entryVariable = 0, targets = Targeting.Slot_SelfSlot },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Pigments_Shift_Effect>(), entryVariable = 0, targets = Targeting.Slot_SelfSlot },
                 new EffectInfo() { effect = ScriptableObject.CreateInstance<FieldEffect_Apply_Effect>().AutoSetFieldEffectEffects("Shield_ID"), entryVariable = 4, targets = TargetAllyWeakest },
                 new EffectInfo() { effect = ScriptableObject.CreateInstance<FieldEffect_Apply_Effect>().AutoSetFieldEffectEffects("Constricted_ID"), entryVariable = 2, targets = TargetAllyWeakestFlip },
             };

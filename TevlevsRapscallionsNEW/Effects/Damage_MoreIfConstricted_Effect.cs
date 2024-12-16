@@ -5,7 +5,7 @@ using UnityEngine;
 
 namespace TevlevsRapscallionsNEW.Effects
 {
-    public class DealMoreDamageIfConstrictedEffect : EffectSO
+    public class Damage_MoreIfConstricted_Effect : EffectSO
     {
         [DeathTypeEnumRef]
         public string _DeathTypeID = "Basic";

@@ -10,5 +10,5 @@ public class GilbertRandomizer : StateMachineBehaviour
         animator.SetFloat(FloatName, Random.Range(range.x, range.y + 0.01f));
     }
 
-    
+
 }

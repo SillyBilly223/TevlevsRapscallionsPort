@@ -5,7 +5,7 @@ using System.Text;
 
 namespace TevlevsRapscallionsNEW.Effects
 {
-    public class GilbertDestructEffect : EffectSO
+    public class Misc_GilbertDestruct_Effect : EffectSO
     {
         public override bool PerformEffect(CombatStats stats, IUnit caster, TargetSlotInfo[] targets, bool areTargetSlots, int entryVariable, out int exitAmount)
         {

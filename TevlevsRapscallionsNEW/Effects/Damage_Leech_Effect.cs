@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TevlevsRapscallionsNEW.Effects
 {
-    public class LeechDamageEffect : EffectSO
+    public class Damage_Leech_Effect : EffectSO
     {
         [DeathTypeEnumRef]
         public string _DeathTypeID = "Basic";

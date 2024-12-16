@@ -4,7 +4,7 @@ using System.Text;
 
 namespace TevlevsRapscallionsNEW.Effects
 {
-    public class RemoveExtraAbilityFromEnemyEffect : EffectSO
+    public class EnemyTurn_RemoveExtraAbilityFromEnemy_Effect : EffectSO
     {
         public ExtraAbilityInfo ExtraAbility;
 

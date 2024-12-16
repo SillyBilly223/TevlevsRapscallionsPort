@@ -43,9 +43,9 @@ namespace TevlevsRapscallionsNEW.Characters
             ability.Cost = new ManaColorSO[] { Pigments.Yellow };
             ability.Effects = new EffectInfo[]
             {
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<SwapToSidesReturnSlotEffect>(), entryVariable = 3, targets = Targeting.Slot_SelfSlot },
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<ParasiteProducingDamageEffect>(), entryVariable = 4, targets = Targeting.Slot_Front },
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<MoveToEntryValueSlotEffect>(), entryVariable = 0, targets = Targeting.Slot_SelfSlot, condition = GrabSecondEffectEntryValue },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Slot_SwapToSidesReturn_Effect>(), entryVariable = 3, targets = Targeting.Slot_SelfSlot },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Damage_ParasiteProducing_Effect>(), entryVariable = 4, targets = Targeting.Slot_Front },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Slot_MoveToEntryValue_Effect>(), entryVariable = 0, targets = Targeting.Slot_SelfSlot, condition = GrabSecondEffectEntryValue },
             };
             ability.AnimationTarget = Targeting.Slot_Front;
             ability.Visuals = EXOP._splig.rankedData[0].rankAbilities[2].ability.visuals;
@@ -67,7 +67,7 @@ namespace TevlevsRapscallionsNEW.Characters
             ability2.Cost = new ManaColorSO[] { Pigments.YellowPurple };
             ability2.Effects = new EffectInfo[]
             {
-                new EffectInfo() { effect = ScriptableObject.CreateInstance<ApplyEmptyParasitismEffect>(), entryVariable = 3, targets = Targeting.Slot_Front },
+                new EffectInfo() { effect = ScriptableObject.CreateInstance<Apply_EmptyParasitism_Effect>(), entryVariable = 3, targets = Targeting.Slot_Front },
                 new EffectInfo() { effect = ScriptableObject.CreateInstance<RemoveStatusEffectEffect>().AutoSetStatusEffectEffects("Ruptured_ID"), entryVariable = 0, targets = Targeting.Slot_SelfSlot },
                 new EffectInfo() { effect = ScriptableObject.CreateInstance<RefreshAbilityUseEffect>(), entryVariable = 1, targets = Targeting.Slot_SelfSlot, condition = RandomChanceCondition.Chance(20)},
             };
@@ -87,7 +87,7 @@ namespace TevlevsRapscallionsNEW.Characters
                 "Apply 4 parasitism to the opposing enemy. Remove all negative status effects from this party member.\n50% chance to refresh this party member.",
                 "Apply 5 parasitism to the opposing enemy. Remove all negative status effects from this party member.\n50% chance to refresh this party member.",
             };
-            scaledAbility2.SetEffectScaleFromIndex(1, 0, ScriptableObject.CreateInstance<RemoveAllNegativeStatusEffectsEffect>());
+            scaledAbility2.SetEffectScaleFromIndex(1, 0, ScriptableObject.CreateInstance<StatusEffect_RemoveAllNegative_Effect>());
             scaledAbility2.EntryValueScale[1] = new int[3] { 4, 4, 5 };
             scaledAbility2.Scale();
 

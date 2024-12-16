@@ -6,7 +6,7 @@ using Random = UnityEngine.Random;
 
 namespace TevlevsRapscallionsNEW.Effects
 {
-    public class HealRandomEffect : EffectSO
+    public class Heal_Random_Effect : EffectSO
     {
         public bool entryAsPercentage;
 
@@ -44,7 +44,7 @@ namespace TevlevsRapscallionsNEW.Effects
 
         public static EffectSO Generate(int min, int max)
         {
-            HealRandomEffect healRandomEffect = ScriptableObject.CreateInstance<HealRandomEffect>();
+            Heal_Random_Effect healRandomEffect = ScriptableObject.CreateInstance<Heal_Random_Effect>();
             healRandomEffect.Min = min;
             healRandomEffect.Max = max + 1;
             return healRandomEffect;
